@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&family=Monoton&family=Press+Start+2P&display=swap');
+
+body {
+    background-color: #fe8761;
+    width: 95vw;
+    height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#drum-machine {
+    display: grid;
+    grid-template-areas:'name name name'
+                        'display display display'
+                        'div div div'
+                        'div div div'
+                        'div div div';
+    align-items: center;
+    justify-items: center;
+    background-color: #655c56;
+    width: 50vw;
+    height: 60vh;
+    border-radius: 1em;
+    padding: 1em;
+    box-shadow: 5px 5px #333333;
+}
+
+#brand {
+    grid-area: name;
+    height: 5vh;
+    font-size: 35px;
+    font-family: 'Monoton', cursive;
+}
+
+#display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: display;
+    width: 45vw;
+    height: 8vh;
+    line-height: 8vh;
+    background-color: #ffe75e;
+    border: 5px solid #feb72b;
+    border-radius: 0.5em;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#display-p {
+    font-size: 25px;
+    color: #af460f;
+}
+
+.drum-pad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8vw;
+    height: 8vh;
+    background-color: #e1f4f3;
+    border: 3px solid #706c61;
+    border-radius: 0.3em;
+    font-size: 20px;
+    font-family: 'Faster One', cursive;
+}
+
+.drum-pad:active, .down {
+    background-color: #e1f4f379;
+    border: 3px solid #706c6177;
+}
