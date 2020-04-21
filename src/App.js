@@ -96,13 +96,21 @@ class App extends React.Component {
   }
 
   playMusic(e) {
-    let audioEl = e.target.parentElement.querySelector('audio');
+    if (e.target.className === 'drum-pad') {
+    let audioEl = e.target.querySelector('audio');
     audioEl.play();
     this.setState({currentlyPlaying: audioEl.parentElement.id});
     setTimeout(() => {
       this.setState({currentlyPlaying: ''});
     }, 1000);
-  }
+  } else if (e.target.className === 'drum-pad-p') {
+    let audioEl = e.target.parentElement.querySelector('audio');
+    audioEl.play();
+    this.setState({currentlyPlaying: audioEl.parentElement.id});
+    setTimeout(() => {
+      this.setState({currentlyPlaying: ''});
+    }, 1000);    
+  }}
 
   render() {
     return (
@@ -149,7 +157,7 @@ function DrumPads(props) {
     id={x.identifier}
     name={x.identifierCode}>
     </audio>
-    <p>{x.identifier}</p>
+    <p className='drum-pad-p'>{x.identifier}</p>
     </div>
     )});
   return a;
